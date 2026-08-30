@@ -1,10 +1,6 @@
 async function load(){
   const {data,error}=await supabase.from('offices').select('*')
-
-  if(error){
-    console.error('SUPABASE OFFICES ERROR:', error)
-    return
-  }
+  if(error){demoData();return}
 
   offices=data||[]
   render()
